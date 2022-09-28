@@ -1,13 +1,10 @@
 <script setup>
-import Tabbar from './components/common/tabbar/tabbar.vue';
-
+import Tabbar2 from './components/common/tabbar/tabbar2.vue';
 </script>
 
 <template>
-  
-
   <router-view></router-view>
-  <tabbar></tabbar>
+  <Tabbar2></Tabbar2>
 </template>
 
 <style scoped>
