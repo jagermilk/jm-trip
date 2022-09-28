@@ -24,6 +24,14 @@ const router=createRouter({
             path:"/profile",
             component:()=>import("@/views/profile/profile.vue")
         }
+        ,
+        {
+            path:"/city",
+            component:()=>import("@/views/city/city.vue"),
+            meta:{
+                hideTabBar:true
+            }
+        }
     ]
 })
 export default router
