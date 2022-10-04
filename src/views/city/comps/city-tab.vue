@@ -1,22 +1,28 @@
 <template>
     <div class="tab">
-        <van-tabs v-model="active">
-            <template v-for="(value,key,index) in cities">
-           <van-tab :title="value?.title">内容 1</van-tab>
-            </template>
+        <van-tabs v-model:active="active">
+            <template v-for="(value,key,index) in cities" >
+            <van-tab :title="value?.title" :name="key"></van-tab>
+        </template>
         </van-tabs>
     </div>
 </template>
 
 <script lang="ts" setup>
 
-import { ref } from 'vue';
+import { handleError, ref ,watch} from 'vue';
 import {usecity} from '@/store/modules/city'
 import { storeToRefs } from 'pinia';
-const active = ref(0)
+import { computed } from '@vue/reactivity';
 const cityStore=usecity()
 cityStore.getcities()
-const {cities}=storeToRefs(cityStore) 
+const active = ref('')
+let {cities}=storeToRefs(cityStore)
+watch(active,(newName,oldName)=>{
+    console.log(newName)
+    cityStore.clicktitle=newName
+})
+
 </script>
 
 <style lang="less" scoped>
