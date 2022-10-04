@@ -20,15 +20,15 @@ import { ref } from 'vue'
 import dayjs from 'dayjs'
 import {useRouter} from 'vue-router'
 
-const nowdate=ref(dayjs(new Date()).format('YY/MM/DD'))
+const nowdate=ref(dayjs(new Date()).format('MM/DD'))
 const end=dayjs(new Date()).add(1, 'day')
-const enddate=ref(dayjs(end).format('YY/MM/DD'))
+const enddate=ref(dayjs(end).format('MM/DD'))
 const difdate=ref(1)
 
 const show=ref(false)
 const onConfirm=(value)=>{
-    nowdate.value=dayjs(value[0]).format('YY/MM/DD')
-    enddate.value=dayjs(value[1]).format('YY/MM/DD')
+    nowdate.value=dayjs(value[0]).format('MM/DD')
+    enddate.value=dayjs(value[1]).format('MM/DD')
     difdate.value=dayjs(value[1]).diff(dayjs(value[0]), 'day') 
     show.value=false
 }
@@ -51,15 +51,15 @@ const onConfirm=(value)=>{
             color: rgb(88, 88, 88);
         }
         .date{
-            margin: 0px !important;
+            margin-top: 1px !important;
             padding:0px !important;
             font-size: 16px;
             color: black;
         }
     }
     .end{
+        width: 100px;
         text-align: left;
-        flex:1;
         .title{
             margin: 0px !important;
             padding:0px !important;
@@ -67,15 +67,14 @@ const onConfirm=(value)=>{
             color: rgb(88, 88, 88);
         }
         .date{
-            margin: 0px !important;
+            margin-top: 1px !important;
             padding:0px !important;
             font-size: 16px;
             color: black;
         }
     }
     .period{
-        text-align: left;
-        flex: 1;
+        width: 120px;
         color: rgb(88, 88, 88);
     }
 }

@@ -1,7 +1,6 @@
 import JMRequest from '@/service/index'
-export function getcityall(){
+export function getsuggestscity(){
     return JMRequest.get({
-        url:"/city/all"
+        url:"/home/hotSuggests"
     })
 }
-
