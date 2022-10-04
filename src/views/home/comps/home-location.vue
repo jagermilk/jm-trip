@@ -5,7 +5,6 @@
             <span class="text">我的位置</span>
             <img src="@/asset/img/home/icon_location.png" alt="">
         </div>
-
     </div>
 </template>
 
@@ -31,16 +30,18 @@ const positionClick=()=>{
 
 <style lang="less" scoped>
 .location {
-    padding: 0px 20px;
+    padding: 0px 10px;
     display: flex;
     justify-content: left;
     align-items: center;
     height: 44px;
     .city {
+        margin-left: 10px;
         flex: 1;
         font-size: 18px;
     }
     .location{
+        
         width: 74px;
         .text{
             font-size: 14px;

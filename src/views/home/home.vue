@@ -2,8 +2,8 @@
     <div class="home">
             <HomeNavBar></HomeNavBar>
             <HomeBanner></HomeBanner>
-            
             <HomeLocation></HomeLocation>
+            <HomeDate></HomeDate>
     </div>
 </template>
 
@@ -11,8 +11,7 @@
 import HomeNavBar from "./comps/home-nav-bar.vue";
 import HomeBanner from "./comps/home-banner.vue";
 import HomeLocation from "./comps/home-location.vue";
-
-
+import HomeDate from "./comps/home-date.vue";
 
 </script>
 
