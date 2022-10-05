@@ -10,6 +10,7 @@
 
 <style lang="less" scoped>
     .navbar{
+            
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,6 +20,7 @@
                 color: var(--primary-color);
                 font-size: 18px;
                 font-weight: 700;
+                
             }
         }
 </style>

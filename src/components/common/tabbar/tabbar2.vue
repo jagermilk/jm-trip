@@ -13,8 +13,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { getAssetURl } from '@/uitils/get-asset-img'
+import { useRoute } from 'vue-router';
+const route=useRoute()
 const currentIndex = ref(0)
 const tabbarData = [
     {
@@ -42,10 +44,19 @@ const tabbarData = [
         path: "/profile"
     },
 ]
+watch(route,(newRoute)=>{
+    const index=tabbarData.findIndex(item=>item.path==newRoute.path)
+    if(index===-1) return
+    currentIndex.value=index
+})
+
+
 </script>
 
 <style lang="less" scoped>
     .tabbar2{
+        position: fixed;
+        height: 49px;
         .van-tabbar-item{
             img{
                 height: 28px;

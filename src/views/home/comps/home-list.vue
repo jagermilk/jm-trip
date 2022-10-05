@@ -1,22 +1,12 @@
 <template>
     <div class="list">
         <div class="title">热门精选</div>
-        
         <div class="content">
             <template v-for="(item,index) in houselist" :key="item.data.houseId">
                 <HouseItemV3 v-if="item.discoveryContentType===3" :itemdata="item.data"></HouseItemV3>
                 <HouseItemV9 v-if="item.discoveryContentType===9" :itemdata="item.data"></HouseItemV9>
             </template>
         </div>
-        <button @click="more">加载更多</button>
-        <ul>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-        </ul>
-        
     </div>
 </template>
 
@@ -40,16 +30,15 @@ const more = () => {
     currentpage.value++
     console.log(currentpage.value)
     storehome.gethouselist(currentpage.value)
-
-
 }
+defineExpose({ more })
 </script>
 
 <style lang="less" scoped>
 .list {
     padding: 10px 8px;
-
     .title {
+        margin: 5px 10px;
         font-size: 20px;
         font-weight: 600;
     }

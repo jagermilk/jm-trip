@@ -8,7 +8,9 @@
             <HomeSuggests></HomeSuggests>
             <HomeSearch></HomeSearch>
             <HomeCatagories :categories="categories"></HomeCatagories>
-            <HomeList></HomeList>
+            <HomeTabsearch v-if="scroll100"></HomeTabsearch>
+            <HomeList ref="childlist"></HomeList>
+            
     </div>
 </template>
 
@@ -21,18 +23,40 @@ import HomeKey from "./comps/home-key.vue";
 import HomeSuggests from "./comps/home-suggests.vue";
 import HomeSearch from "./comps/home-search.vue";
 import HomeCatagories from "./comps/home-catagories.vue";
+import HomeList from "./comps/home-list.vue";
 
 import {usehome} from '@/store/modules/home'
 import { storeToRefs } from "pinia";
-import HomeList from "./comps/home-list.vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
+import useScroll from '@/hooks/useScroll'
+import HomeTabsearch from './comps/home-tabsearch.vue'
+import { computed } from "@vue/reactivity";
 const storehome=usehome()
 storehome.getCategories()
 const {categories}=storeToRefs(storehome)
 
+const childlist=ref(null);
+const {isReachedBottom,scrollTop}=useScroll()
+watch(isReachedBottom,((newvalue)=>{
+    if(newvalue){
+        childlist.value.more()
+        isReachedBottom.value=false
+    }
+}))
+
+const scroll100=computed(()=>{
+    if(scrollTop.value>=100){
+        return true
+    }
+    else{
+        return false
+    }
+})
 </script>
 
 <style lang="less" scoped>
     .home{
-       
+    margin-bottom: 49px;
+    overflow: auto;
     }
 </style>

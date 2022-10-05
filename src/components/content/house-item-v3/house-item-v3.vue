@@ -16,7 +16,7 @@
 
                 <div class="price">¥{{itemdata.finalPrice}}</div>
                 <div class="nowprice">¥{{itemdata.productPrice}}</div>
-                <div class="sales">{{itemdata.priceTipBadge.text}}</div>
+                <div class="sales">{{itemdata.priceTipBadge?.text}}</div>
             </div>
         </div>
     </div>
