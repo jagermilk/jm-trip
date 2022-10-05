@@ -6,7 +6,7 @@ const route=useRoute()
 
 <template>
   <router-view></router-view>
-  <Tabbar2></Tabbar2>
+  <Tabbar2 v-if="!$route.meta.hideTabBar"></Tabbar2>
 </template>
 
 <style scoped>

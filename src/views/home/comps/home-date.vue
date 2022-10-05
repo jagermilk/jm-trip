@@ -20,15 +20,26 @@ import { ref } from 'vue'
 import dayjs from 'dayjs'
 import {useRouter} from 'vue-router'
 
+import {usehome} from '@/store/modules/home'
+import { storeToRefs } from 'pinia';
+
 const nowdate=ref(dayjs(new Date()).format('MM/DD'))
 const end=dayjs(new Date()).add(1, 'day')
 const enddate=ref(dayjs(end).format('MM/DD'))
 const difdate=ref(1)
 
+const homestore=usehome()
+const {starttime,endtime}=storeToRefs(homestore)
+starttime.value=nowdate.value
+endtime.value=enddate.value
+
 const show=ref(false)
+
 const onConfirm=(value)=>{
     nowdate.value=dayjs(value[0]).format('MM/DD')
     enddate.value=dayjs(value[1]).format('MM/DD')
+    starttime.value=nowdate.value
+    endtime.value=enddate.value
     difdate.value=dayjs(value[1]).diff(dayjs(value[0]), 'day') 
     show.value=false
 }

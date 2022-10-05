@@ -1,7 +1,10 @@
 <template>
     <div class="suggests">
-        <template v-for="item in suggests">
-            <div class="itemsuggests">
+        <template v-for="(item,key,index) in suggests" :key="index">
+            <div class="itemsuggests"
+            :style="{color:item.tagText.text,background:item.tagText.background.color}
+             "
+            >
                 {{item.tagText.text}}
             </div>
         </template>
@@ -18,15 +21,22 @@ const {suggests}=storeToRefs(homestore)
 </script>
 
 <style lang="less" scoped>
-.suggests{              
+.suggests{
+    margin: 20px 20px;
     display: flex;
     flex-direction: row;
+    justify-content: left;
+    align-items: center;
     flex-wrap: wrap;
-    margin:0px 10px 0px 0px;
     .itemsuggests{
-        margin: 0px;
-        width: 72px;
-        height: 40px;
+        color: gray;
+        text-align: center;
+        line-height: 12px;
+        border-radius: 14px;
+        padding:10px;
+        font-size: 12px;
+        margin:0px!important;
+        height: 12px;
     }
 }
 </style>

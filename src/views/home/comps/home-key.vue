@@ -18,7 +18,7 @@
         color: gray;
         display: flex;
         flex-direction: column;
-        padding:1px 10px;
+        padding:10px 10px;
         .top{
             display: flex;
             flex-direction: row;
