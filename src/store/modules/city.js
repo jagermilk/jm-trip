@@ -6,9 +6,6 @@ export const usecity=defineStore("city",{
         return{
         cities:{},
         clicktitle:'cityGroup',
-        currentCity:{
-            "cityName":'重庆'
-        },
         suggests:{}
         }
     },

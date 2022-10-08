@@ -6,7 +6,7 @@ export default function useScroll(){
         const clientHight=document.documentElement.clientHeight
         scrollTop.value=document.documentElement.scrollTop
         const scrollHeight=document.documentElement.scrollHeight
-        if(scrollHeight<=scrollTop+clientHight){
+        if(scrollHeight===scrollTop.value+clientHight){
             isReachedBottom.value=true
         }
     }

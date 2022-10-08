@@ -4,8 +4,6 @@ export const usehome=defineStore("home",{
     state:()=>{
         return{
         suggests:{},
-        starttime:'',
-        endtime:'',
         categories:{},
         houselist:[],
         currentpage:1

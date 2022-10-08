@@ -5,6 +5,7 @@ body {
 }
 
 :root {
+  --van-search-background-color:#fff;
   --primary-color: #ff9645;
   --van-primary-color: var(--primary-color);
   --van-nav-bar-title-text-color: var(--primary-color) !important;

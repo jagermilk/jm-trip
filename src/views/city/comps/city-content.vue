@@ -33,9 +33,12 @@ import { usecity } from '@/store/modules/city'
 import { computed } from '@vue/reactivity';
 import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
+import {usemain} from '@/store/modules/main'
+const mainstore=usemain()
+const {currentCity}=storeToRefs(mainstore)
 const router=useRouter()
 const cityStore = usecity()
-const { cities, clicktitle,currentCity } = storeToRefs(cityStore)
+const { cities, clicktitle} = storeToRefs(cityStore)
 const currentGroup = computed(() => cities.value[clicktitle.value])
 const indexList=computed(()=>{
     const list=currentGroup.value.cities.map(item => item.group)

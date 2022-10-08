@@ -6,14 +6,10 @@
 
 <script lang="ts" setup>
 import router from '@/router';
-import {usehome} from '@/store/modules/home'
-import {usecity} from '@/store/modules/city'
+import {usemain} from '@/store/modules/main'
 import { storeToRefs } from 'pinia';
-const storehome=usehome()
-const {starttime,endtime}=storeToRefs(storehome)
-const storecity=usecity()
-const {currentCity}=storeToRefs(storecity)
-
+const storemain=usemain()
+const {starttime,endtime,currentCity}=storeToRefs(storemain)
 
 const searchBtnClick=()=>{
 

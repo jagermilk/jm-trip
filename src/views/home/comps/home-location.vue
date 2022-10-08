@@ -11,10 +11,10 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router'
 
-import {usecity} from '@/store/modules/city'
+import {usemain} from '@/store/modules/main'
 import { storeToRefs } from "pinia";
-const cityStore=usecity()
-const {currentCity}=storeToRefs(cityStore)
+const mainstore=usemain()
+const {currentCity}=storeToRefs(mainstore)
 
 
 const router=useRouter()
