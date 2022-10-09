@@ -3,8 +3,15 @@
         <div class="title">热门精选</div>
         <div class="content">
             <template v-for="(item,index) in houselist" :key="item.data.houseId">
-                <HouseItemV3 v-if="item.discoveryContentType===3" :itemdata="item.data"></HouseItemV3>
-                <HouseItemV9 v-if="item.discoveryContentType===9" :itemdata="item.data"></HouseItemV9>
+                <HouseItemV3 
+                @click="itemclick(item.data.houseId)"
+                v-if="item.discoveryContentType===3"
+                :itemdata="item.data">
+            </HouseItemV3>
+                <HouseItemV9
+                @click="itemclick(item.data.houseId)"
+                v-if="item.discoveryContentType===9"
+                :itemdata="item.data"></HouseItemV9>
             </template>
         </div>
     </div>
@@ -14,6 +21,7 @@
 import { usehome } from '@/store/modules/home'
 import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import HouseItemV3 from '../../../components/content/house-item-v3/house-item-v3.vue';
 import HouseItemV9 from '../../../components/content/house-item-v9/house-item-v9.vue';
 const storehome = usehome()
@@ -30,6 +38,11 @@ const more = () => {
     currentpage.value++
     console.log(currentpage.value)
     storehome.gethouselist(currentpage.value)
+}
+
+const router=useRouter()
+const itemclick=(payload)=>{
+    router.push("/detail/"+payload)
 }
 defineExpose({ more })
 </script>

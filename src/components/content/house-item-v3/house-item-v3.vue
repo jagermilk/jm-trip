@@ -1,5 +1,5 @@
 <template>
-    <div class="itemv3">
+    <div class="itemv3" >
         <div class="inner">
             <div class="cover">
                 <img :src="itemdata.image.url" alt="">

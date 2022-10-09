@@ -10,7 +10,6 @@
             <HomeCatagories :categories="categories"></HomeCatagories>
             <HomeTabsearch v-if="scroll100"></HomeTabsearch>
             <HomeList ref="childlist"></HomeList>
-            
     </div>
 </template>
 
