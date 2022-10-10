@@ -42,7 +42,7 @@ const more = () => {
 
 const router=useRouter()
 const itemclick=(payload)=>{
-    router.push("/detail/"+payload)
+      router.push("/detail/"+payload)  
 }
 defineExpose({ more })
 </script>
@@ -51,7 +51,7 @@ defineExpose({ more })
 .list {
     padding: 10px 8px;
     .title {
-        margin: 5px 10px;
+        margin: 10px 10px;
         font-size: 20px;
         font-weight: 600;
     }

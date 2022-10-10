@@ -73,26 +73,25 @@ defineProps({
             .price {
                 font-size: 16px;
                 color: orange;
-                flex: 1;
-                margin-right: 3px;
+                margin-right: 5px;
                 font-weight: 900;
             }
 
             .nowprice {
                 text-decoration: line-through;
                 font-size: 13px;
-                flex: 1;
+                margin-right: 5px;
             }
 
             .sales {
-                text-align: center;
-                font-size: 5px !important;
+                font-size: 12px !important;
                 background-color: pink;
                 border-radius: 5px;
-                width: 53px;
                 height: 15px;
-                margin-right: 28px;
                 color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 }

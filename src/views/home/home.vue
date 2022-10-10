@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home" ref="homeRef">
             <HomeNavBar></HomeNavBar>
             <HomeBanner></HomeBanner>
             <HomeLocation></HomeLocation>
@@ -26,7 +26,7 @@ import HomeList from "./comps/home-list.vue";
 
 import {usehome} from '@/store/modules/home'
 import { storeToRefs } from "pinia";
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { onActivated, onMounted, onUnmounted, ref, watch } from "vue";
 import useScroll from '@/hooks/useScroll'
 import HomeTabsearch from './comps/home-tabsearch.vue'
 import { computed } from "@vue/reactivity";
@@ -51,6 +51,10 @@ const scroll100=computed(()=>{
         return false
     }
 
+})
+const homeRef=ref()
+onActivated(()=>{
+    homeRef.value?.scrollTo(0,scrollTop.value)
 })
 </script>
 

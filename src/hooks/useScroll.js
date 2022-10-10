@@ -1,4 +1,4 @@
-import { onMounted, onUnmounted, ref } from "vue";
+import { onDeactivated, onMounted, onUnmounted, ref } from "vue";
 export default function useScroll(){
     const isReachedBottom=ref(false)
     const scrollTop=ref(0)
@@ -15,6 +15,10 @@ export default function useScroll(){
     })
     
     onUnmounted(() => {
+        window.removeEventListener("scroll",fetchmore)
+    })
+
+    onDeactivated(()=>{
         window.removeEventListener("scroll",fetchmore)
     })
     return {isReachedBottom,scrollTop}

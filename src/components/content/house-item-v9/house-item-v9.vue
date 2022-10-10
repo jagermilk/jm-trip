@@ -12,7 +12,7 @@
                 <div class="bottom">
                     <van-rate :model-value="Number(itemdata.commentScore)"
                     :count="5"
-                    size="14px"
+                    size="16px"
                     void-color="#ff9645"
                     readonly allow-half
                     />

@@ -42,11 +42,11 @@ defineProps({
         text-align: left;
         border-bottom: 1px solid rgb(232, 232, 232);
         border-top: 2px solid  rgb(232, 232, 232);
-        margin:5px 0px 5px 0px;
+        margin:10px 0px 10px 0px;
     }
     .more {
         padding:0px;
-        margin: 10px 0px;
+        margin: 20px 0px 15px 0px;
         text-align: right;
         font-size: 13px;
         color: orange;

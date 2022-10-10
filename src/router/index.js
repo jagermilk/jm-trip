@@ -22,7 +22,10 @@ const router=createRouter({
         ,
         {
             path:"/profile",
-            component:()=>import("@/views/profile/profile.vue")
+            component:()=>import("@/views/profile/profile.vue"),
+            meta:{
+                hideTabBar:true
+            }
         }
         ,
         {

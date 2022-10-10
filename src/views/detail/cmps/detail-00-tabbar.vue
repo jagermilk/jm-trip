@@ -3,7 +3,7 @@
             <TabbarShow>
                 <template #middle>
                 <div class="detailnavitems">
-                    <div v-for="(item,index) in ['详情', '价格', '房东', '评论','须知', '位置']" @click="showdetailtab(index)"
+                    <div v-for="(item,index) in ['详情', '价格', '房东', '评论','须知', '周边']" @click="showdetailtab(index)"
                         :class="{active:index==currentIndex1}">
                         {{item}}</div>
                 </div>

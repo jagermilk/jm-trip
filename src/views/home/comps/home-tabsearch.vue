@@ -1,7 +1,7 @@
 <template>
    <Searchbar>
     <template #left>
-        <img src="@/asset/img/common/icon_nav_back.png" alt=""/>
+        <img src="@/asset/img/common/icon_nav_back.png" alt="" @click="goback"/>
     </template>
     <template #right>
         <img src="@/asset/img/home/icon-right-menu.png" alt=""/>
@@ -13,7 +13,9 @@
 <script lang="ts" setup>
 
 import Searchbar from '@/components/common/searchbar/searchbar.vue';
-
+const goback=()=>{
+    window.scrollTo(0,0)
+}
 
 
 

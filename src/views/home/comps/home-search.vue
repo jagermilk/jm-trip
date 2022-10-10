@@ -19,7 +19,6 @@ const searchBtnClick=()=>{
             starttime:starttime.value,
             endtime:endtime.value,
             currentCity:currentCity.value.cityName
-            
         }
     })
 }
