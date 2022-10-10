@@ -67,6 +67,7 @@ defineProps({
 .content {
 
     .overall {
+        margin-top: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -103,12 +104,12 @@ defineProps({
     }
 
     .tags {
-        margin-top: 10px;
+        margin-top: 20px;
         display: flex;
         flex-wrap: wrap;
         .tagitem{
             font-size: 13px;
-            margin: 3px;
+            margin: 5px;
             background-color: rgba(0,0,0,.03);
             padding:2px;
             border-radius: 2px;
@@ -116,7 +117,7 @@ defineProps({
     }
 
     .comments {
-        margin-top: 10px;
+        margin: 20px 0px;
         background-color: rgba(0,0,0,.02);
         .avatars{
             display: flex;
@@ -134,8 +135,8 @@ defineProps({
         }
         .context{
             display: flex;
-            justify-content: center;
-            align-items: left;
+            justify-content: left;
+            align-items: center;
             padding:20px 0px;
         }
     }
