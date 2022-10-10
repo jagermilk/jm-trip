@@ -60,7 +60,7 @@ defineProps({
         justify-content: left;
         height: 26px;
         line-height: 26px;
-        background-color: rgb(233, 233, 233);
+        background-color: rgba(0, 0, 0, 0.03);
         margin-top: 10px;
         color: rgb(0, 0, 0);
         padding-left: 5px;
@@ -73,13 +73,13 @@ defineProps({
 
         .center {
             font-size: 13px;
-            line-height: 35px;
+            line-height: 30px;
             font-weight: 600;
             margin-right: 5px;
         }
 
         .right {
-            line-height: 35px;
+            line-height: 30px;
             font-size: 13px;
             color: gray;
         }
@@ -94,12 +94,12 @@ defineProps({
     }
 
     .position {
-        background-color: rgb(233, 233, 233);
+        background-color:rgba(0, 0, 0, 0.03);
         margin-top: 10px;
         color: rgb(0, 0, 0);
         font-size: 12px;
         font-weight: 600;
-
+        padding:3px 0px;
         .address {
             display: flex;
             justify-content: space-between;

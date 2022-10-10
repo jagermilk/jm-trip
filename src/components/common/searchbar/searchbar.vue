@@ -8,9 +8,9 @@
             <div class="place">{{currentCity.cityName}}</div>
             <div class="time">
                 <div class="start">
-                    <span>住</span> {{dayjs(starttime.value).format('MM.DD')}}
+                    <span>住</span>{{showstarttime}}
                 </div>
-                <div class="end"><span>离</span> {{dayjs(starttime.value).format('MM.DD')}}</div>
+                <div class="end"><span>离</span>{{showendtime}}</div>
             </div>
             <van-search v-model="value" placeholder="关键字/位置/民宿名" />
         </div>
@@ -28,10 +28,18 @@ import dayjs from 'dayjs'
 import {usemain} from '@/store/modules/main'
 import { storeToRefs } from 'pinia';
 import { usecity } from '@/store/modules/city'
+import { computed } from '@vue/reactivity';
 const storemain = usemain()
-const { starttime, endtime } = storeToRefs(storemain)
-const storecity = usecity()
-const { currentCity } = storeToRefs(storemain)
+const { starttime, endtime,currentCity } = storeToRefs(storemain)
+const showstarttime=computed(()=>{
+    //return dayjs(dayjs(starttime.value).format()).format('MM.DD')
+    return starttime.value
+})
+const showendtime=computed(()=>{
+    //return dayjs(dayjs(endtime.value).format()).format('MM.DD')
+    return endtime.value
+})
+
 </script>
 
 <style lang="less" scoped>
