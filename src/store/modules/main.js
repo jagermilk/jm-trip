@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+
 export const usemain=defineStore("main",{
     state:()=>{
         return{
@@ -7,8 +8,10 @@ export const usemain=defineStore("main",{
             currentCity:{
                 "cityName":'重庆'
             },
-            loadingshow:false
+            loadingshow:false,
+                    
         }
+
         
-    }
+    },
 })

@@ -1,5 +1,5 @@
 <template>
-    <div class="detail" ref="detailRef" v-if="detailInfos">
+    <div class="detailmodule" ref="detailRef" v-if="detailInfos">
         <Detail00Tabbar v-if="scroll100" ref="tabbarshow" @showcurrentindex="showcurrentindex"></Detail00Tabbar>
         <div class="detail">
             <div class="top">
@@ -13,6 +13,7 @@
         <Detail05Comment ref="comment" :commentModule="mainpart?.dynamicModule?.commentModule"></Detail05Comment>
         <Detail06Notice ref="notice" :rulesModule="mainpart?.dynamicModule?.rulesModule"></Detail06Notice>
         <DetailMap ref="map" :positionModule="mainpart?.dynamicModule?.positionModule"></DetailMap>
+        <DetailBottom :myid="myid"></DetailBottom>
     </div>
     <div v-if="!detailInfos">
         <div class="toperr">
@@ -41,11 +42,14 @@ import Detail05Comment from './cmps/detail-05-comment.vue';
 import Detail06Notice from './cmps/detail-06-notice.vue';
 import Detail00Tabbar from './cmps/detail-00-tabbar.vue';
 import useScroll from '@/hooks/useScroll'
+import DetailBottom from './cmps/detail-bottom.vue';
 
 const detailInfos = ref()
 const mainpart = computed(() => detailInfos.value.mainPart)
 const router = useRouter()
 const route = useRoute()
+const myid= ref(route.params.houseId)
+
 const onClickLeft = () => {
     router.go(-1)
 }
@@ -73,11 +77,11 @@ const map = ref()
 const themeTopY = []
 onUpdated(() => {
     themeTopY.push(0)
-    themeTopY.push(facility.value.$el.offsetTop-47)
-    themeTopY.push(lord.value.$el.offsetTop-47)
-    themeTopY.push(comment.value.$el.offsetTop-47)
-    themeTopY.push(notice.value.$el.offsetTop-47)
-    themeTopY.push(map.value.$el.offsetTop-47)
+    themeTopY.push(facility.value.$el.offsetTop - 47)
+    themeTopY.push(lord.value.$el.offsetTop - 47)
+    themeTopY.push(comment.value.$el.offsetTop - 47)
+    themeTopY.push(notice.value.$el.offsetTop - 47)
+    themeTopY.push(map.value.$el.offsetTop - 47)
 })
 watch((scrollTop), () => {
     if (document.documentElement.scrollTop >= 0 && document.documentElement.scrollTop < themeTopY[1]) {
@@ -107,12 +111,15 @@ const showcurrentindex = (index) => {
     console.log(index)
     window.scrollTo(0, themeTopY[index])
 }
-const back=()=>{
+const back = () => {
     router.go(-1)
 }
 </script>
 
 <style lang="less" scoped>
+.detailmodule{
+    padding-bottom: 49px;
+}
 .toperr {
     display: flex;
     justify-content: space-between;
